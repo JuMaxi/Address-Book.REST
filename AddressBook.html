@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book Rest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Address Book</h1>    
+    </header>
+    <section>
+        <div>
+            <p>Name: <input type="text" name="Nametxt" id="Nametxt"></p>
+            <p>Address: <input type="text" name="Address" id="Address"></p>
+            <p>Email: <input type="text" name="Email" id="Email"></p>
+            <p>Define what type of phone you want to insert: </p>
+        </div>
+        <div>
+            <p>
+                <input type="radio" name="Phone" id="Mobile" checked>
+                <label for="Mobile">Mobile</label>
+                <input type="radio" name="Phone" id="Business">
+                <label for="Business">Business</label>
+                <input type="radio" name="Phone" id="Home">
+                <label for="Home">Home</label>
+            </p>
+            <p>
+             Number Phone: <input type="text" name="Number Phone" id="NumberPhone">
+             <input type="button" value="Add Phone" onclick="InsertPhone()">
+            </p>
+                <ul id="ShowPhones"></ul>
+        </div>
+        <div id="End">
+            <p><input type="button" value="Finish" onclick="Finish()"></p>
+        </div>
+    </section>
+    <footer>
+        <p>Developed by <a href="https://github.com/JuMaxi" target="_blank" class="externo">Juliana Maximovski</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
