@@ -75,10 +75,17 @@ function DeletePhone(Number){
 
 }
 
+function CheckPhones(arrayphones){
+    for(let positionarray = 0; positionarray < arrayphones.length; arrayphones++)
+    {
+        return arrayphones[positionarray];
+    }
+}
+    
+
 function Finish(){
+    window.alert(`Oi`);
     let EndMessage = window.document.getElementById('End');
 
-    ContactsArray.push(`${Name.value}, ${Address.value}, ${Email.value}, ${PhonesArray}`);
-
-    EndMessage.innerHTML = 'Contact successfully added!'
+    
 }

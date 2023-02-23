@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Address Book Rest</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,14 +13,18 @@
         <h1>Address Book</h1>    
     </header>
     <section>
-        <div>
-            <p>Name: <input type="text" name="Nametxt" id="Nametxt"></p>
-            <p>Address: <input type="text" name="Address" id="Address"></p>
-            <p>Email: <input type="text" name="Email" id="Email"></p>
-            <p>Define what type of phone you want to insert: </p>
+        <div id="Inserts">
+            <p>Name: </p> 
+            <p><input type="text" name="Nametxt" id="Nametxt"></p>
+            <p>Address: </p>
+            <p><input type="text" name="Address" id="Address"></p>
+            <p>Email: </p>
+            <p><input type="text" name="Email" id="Email"></p>
+           
         </div>
-        <div>
+        <div id="Phones">
             <p>
+                Type Phone:
                 <input type="radio" name="Phone" id="Mobile" checked>
                 <label for="Mobile">Mobile</label>
                 <input type="radio" name="Phone" id="Business">
@@ -27,11 +32,19 @@
                 <input type="radio" name="Phone" id="Home">
                 <label for="Home">Home</label>
             </p>
+            <p>Number Phone </p>
             <p>
-             Number Phone: <input type="text" name="Number Phone" id="NumberPhone">
-             <input type="button" value="Add Phone" onclick="InsertPhone()">
+                 <input type="text" name="NumberPhone" id="NumberPhone">
+                 <select style="width:80px;height: 50px;font-size: 40px;">
+                    <option style="width:50px;height: 50px;">📱</option>
+                    <option style="width:50px;height: 50px;">📞</option>
+                    <option style="width:50px;height: 50px;">☎️</option>
+                 </select>
+                 <input type="button" value="Add Phone" onclick="InsertPhone()">
             </p>
-                <ul id="ShowPhones"></ul>
+            <p>
+                 <ul id="ShowPhones"></ul>
+            </p>
         </div>
         <div id="End">
             <p><input type="button" value="Finish" onclick="Finish()"></p>

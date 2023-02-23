@@ -1,27 +1,110 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root{
+    --color0: #91CCEC;
+    --color1: #8AF7E2;
+    --color2: #78CED6;
+    --color4: #fe9d4df1;
+
+    --font1: 'Merienda', cursive;
+    --font2: 'Quicksand', sans-serif;
+}
+
 body{
-    background:rgb(167, 142, 190);
+    background-image: linear-gradient(to bottom, var(--color0), var(--color2), var(--color1));
+    background-color: var(--color0);
     font: normal 15pt Arial;
+    margin: 10px;
+    width: auto;
+    height: 1000px;
+
 }
 header{
+    background: var(--color4);
     color:white;
     text-align: center;
+    border-radius: 10px;
+    padding: 8px;
+    font-family: var(--font1);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.325);
+}
+header > h1{
+    padding: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.281);
 }
 section{
     background: white;
-    border-radius: 10px;
-    padding: 15px;
-    width: 500px;
+    border-radius: 0px 0px 10px 10px;
+    padding: 12px;
+    padding-top: 5px;
+    max-width: 1000px;
+    min-width: 300px;
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.378);
+    font-family: var(--font2);
+    font-size: 23px;
+}
+input[type=text]{
+    width: 1000px;
+    padding: 18px;
+    margin: auto;
+    border-radius: 4px;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
+    border: 1px solid var(--color4);
+    font-size: 15pt;
+    font-family: var(--font2);
+    max-width:90%;
+    padding-left: 75px;
+    
+}
+input[name=Nametxt]{
+    background-image: url('image/people.png');
+    background-repeat: no-repeat;
+    background-position: 1px 1px;
+    background-size: 65px;
+}
+input[name=Address]{
+    background-image: url('image/address.png');
+    background-repeat: no-repeat;
+    background-position: 1px 1px;
+    background-size: 65px;
+}
+input[name=Email]{
+    background-image: url('image/email.png');
+    background-repeat: no-repeat;
+    background-position: 1px 1px;
+    background-size: 65px;
+}
+#Inserts > p{
+    margin: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.279);
+}
+#Phones > p{
+    margin: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.279);
+}
+input[name=NumberPhone]{
+    background-image: url('image/phone.jpg');
+    background-repeat: no-repeat;
+    background-position: 1px 2px;
+    background-size: 50px;
+    max-width: 250px;
+    margin: 0px;
+    padding: 15px;
 }
 footer{
-    color:white;
+    color: black;
     text-align: center;
     font-style: italic;
+    padding: 10px;
 }
 footer a{
     text-decoration: none;
-    color: white;
+    color: black;
+    
 }
 footer a:hover{
     text-decoration: underline;
