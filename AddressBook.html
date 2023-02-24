@@ -20,28 +20,19 @@
             <p><input type="text" name="Address" id="Address"></p>
             <p>Email: </p>
             <p><input type="text" name="Email" id="Email"></p>
-           
+            <p>Number Phone: </p>
+            <p>
+                <input type="text" name="NumberPhone" id="NumberPhone">
+                    <select>
+                       <option value="1" selected>📱</option>
+                       <option value="2">📞</option>
+                       <option value="3">☎️</option>
+                    </select>
+                <input type="button" value="AddPhone" onclick="InsertPhone()">
+            </p>
+            
         </div>
-        <div id="Phones">
-            <p>
-                Type Phone:
-                <input type="radio" name="Phone" id="Mobile" checked>
-                <label for="Mobile">Mobile</label>
-                <input type="radio" name="Phone" id="Business">
-                <label for="Business">Business</label>
-                <input type="radio" name="Phone" id="Home">
-                <label for="Home">Home</label>
-            </p>
-            <p>Number Phone </p>
-            <p>
-                 <input type="text" name="NumberPhone" id="NumberPhone">
-                 <select>
-                    <option>📱</option>
-                    <option>📞</option>
-                    <option>☎️</option>
-                 </select>
-                 <input type="button" value="Add Phone" onclick="InsertPhone()">
-            </p>
+        <div>
             <p>
                  <ul id="ShowPhones"></ul>
             </p>

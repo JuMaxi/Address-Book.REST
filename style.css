@@ -8,7 +8,7 @@
     --color1: #8AF7E2;
     --color2: #78CED6;
     --color4: #fe9d4df1;
-
+    --color5: #789CD6;
     --font1: 'Merienda', cursive;
     --font2: 'Quicksand', sans-serif;
 }
@@ -40,80 +40,89 @@ header > h1{
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.281);
 }
 section{
+    max-width: 1000px;
+    min-width: 300px;
     background: white;
     border-radius: 0px 0px 10px 10px;
     padding: 12px;
     padding-top: 18px;
-    max-width: 1000px;
-    min-width: 300px;
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.279);
     font-family: var(--font2);
     font-size: 23px;
 }
 input[type=text]{
-    width: 1000px;
-    padding: 18px;
+    padding: 17px;
     border-radius: 4px;
     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
     border: 1px solid var(--color4);
-    font-size: 15pt;
+    font-size: 17pt;
     font-family: var(--font2);
-    max-width:85%;
     padding-left: 75px;
     padding-right: 0px;
-    
-    
+    background-repeat: no-repeat;
+    background-position: 1px 1px;
+    background-size: 65px;
+    margin-bottom: 25px;
+    height: 30px;
+    max-width: 900px;
+    min-width: 88%;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 input[name=Nametxt]{
     background-image: url('image/people.png');
-    background-repeat: no-repeat;
-    background-position: 1px 1px;
-    background-size: 65px;
-    margin-bottom: 25px;
 }
 input[name=Address]{
     background-image: url('image/address.png');
-    background-repeat: no-repeat;
-    background-position: 1px 1px;
-    background-size: 65px;
-    margin-bottom: 25px;
-    
 }
 input[name=Email]{
     background-image: url('image/email.png');
-    background-repeat: no-repeat;
-    background-position: 1px 1px;
-    background-size: 65px;
-    margin-bottom: 25px;
-}
-#Inserts > p{
-    margin-top: 10px;
-    margin-bottom: -8px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.279);
-    
-}
-#Phones > p{
-    margin: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.279);
-}
-select{
-    width:80px;
-    height: 50px;
-    font-size: 40px;
-}
-select > option{
-    width:50px;
-    height: 50px;
 }
 input[name=NumberPhone]{
     background-image: url('image/phone.jpg');
     background-repeat: no-repeat;
     background-position: 1px 2px;
-    background-size: 50px;
-    max-width: 250px;
-    margin: 0px;
-    padding: 15px;
+    background-size: 58px;
+    margin-right: 12px;
+    max-width: 350px;
+    min-width: 10px;
+    
+}
+#Inserts > p{
+    margin-top: 10px;
+    margin-bottom: -8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.279);
+   
+}
+select{
+    max-width:100px;
+    min-width: 10px;
+    font-size: 40px;
+    height: 61px;
+    border-radius: 4px;
+    box-shadow:1px 1px 3px rgba(0, 0, 0, 0.184);
+    border: 1px solid var(--color5);
+    margin-right: 12px;
+    vertical-align: sub;
+    
+}
+input[value=AddPhone]{
+    background-color: #78D6D5;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.227);
+    width: 87px ;
+    height: 35px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+    font-size: 12pt;
+    padding: 1px;
+    border: 1px solid var(--color5);
+    text-align: center;
+    vertical-align: center;
+}
+ul{
+    list-style-type:none;
 }
 footer{
     color: black;
