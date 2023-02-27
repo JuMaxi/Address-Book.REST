@@ -115,7 +115,7 @@ select{
 input[value=Add]{
     background-color: var(--color6);
     cursor: pointer;
-    border-radius: 9px;
+    border-radius: 4px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.227);
     width: 85px ;
     height: 66px;
@@ -128,8 +128,9 @@ input[value=Add]{
     text-align: center;
     vertical-align: center;
     font-family: var(--font2);
+    color: var(--color7);
+    font-weight: bold;
     transition-duration: 0.5s;
-   
 }
 li{
     list-style-type:none;
@@ -137,10 +138,10 @@ li{
     max-width: 300px;
     min-width: 150px;
     border-radius: 25px;
-    margin: auto;
     font-family: var(--font2);
     padding-left: 60px;
     height: 55px;
+    columns: 2;
 }
 #Marker{
     transform: rotate(30deg);
@@ -159,13 +160,19 @@ input[value=Finish]{
     font-size: 16pt;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
     border-radius: 4px;
-    border: 2px solid var(--color5);
+    border: none;
     text-align: center;
     cursor:pointer;
-    background-color: var(--color5);
+    background-color: var(--color3);
     font-family: var(--font2);
-    font-weight: bold;
+    font-weight: bolder;
     height: 65px;
+    color: var(--color7);
+    transition-duration: 0.5s;
+}
+input[type=button]:hover{
+    background-color: var(--color5);
+    color:white;
 }
 footer{
     color: var(--color7);
@@ -176,7 +183,6 @@ footer{
 footer a{
     text-decoration: none;
     color: var(--color7);
-    
 }
 footer a:hover{
     text-decoration: underline;
