@@ -21,8 +21,8 @@ function InsertPhone(){
     let ShowPhones = window.document.getElementById('ShowPhones');
     let TypePhone = window.document.getElementsByTagName('option');
     let type = TypeCheck();
-    
-    ShowPhones.innerHTML +=`<li id="${Position}"> ${TypePhone[type].innerHTML} ${NumberPhone.value} <span onclick="DeletePhone(${Position})" style="cursor:pointer">❌</span></li>`;
+
+    ShowPhones.innerHTML +=`<li id="${Position}"> <div id="Marker">${TypePhone[type].innerHTML}</div> ${NumberPhone.value} <span onclick="DeletePhone(${Position})" style="cursor:pointer">❌</span></li>`;
 
     PhonesArray.push({
         position: Position,

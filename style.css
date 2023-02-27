@@ -22,7 +22,7 @@ body{
     font: normal 15pt Arial;
     margin: 10px;
     width: auto;
-    height: 1000px;
+    min-height: 1200px;
     padding-top:50px;
 }
 header{
@@ -118,10 +118,12 @@ input[value=Add]{
     border-radius: 9px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.227);
     width: 85px ;
-    height: 46px;
+    height: 66px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
     font-size: 14pt;
     padding: 1px;
+    padding-bottom: 1px;
+    padding-top: 0px;
     border: 2px solid var(--color7);
     text-align: center;
     vertical-align: center;
@@ -129,18 +131,24 @@ input[value=Add]{
     transition-duration: 0.5s;
    
 }
-ul{
+li{
     list-style-type:none;
-    background-image: linear-gradient(to right, #78d6d498, transparent);
-    text-indent: -40px;
+    text-indent: -45px;
     max-width: 300px;
     min-width: 150px;
-    border-radius: 4px;
+    border-radius: 25px;
     margin: auto;
     font-family: var(--font2);
-    -moz-box-shadow:-1px -1px 2px var(--color7);
-    -webkit-box-shadow:-1px -1px 2px var(--color7);
-    box-shadow:-1px -1px 2px var(--color7);
+    padding-left: 60px;
+    height: 55px;
+}
+#Marker{
+    transform: rotate(30deg);
+    transform-origin: 1% 70%;
+    font-size: 40px;
+    padding:1px;
+    height: 6px;
+    width: -1px;
 }
 input[value=Finish]{
     max-width: 1000px;
@@ -157,16 +165,17 @@ input[value=Finish]{
     background-color: var(--color5);
     font-family: var(--font2);
     font-weight: bold;
+    height: 65px;
 }
 footer{
-    color: #004977;
+    color: var(--color7);
     text-align: center;
     font-style: italic;
     padding: 10px;
 }
 footer a{
     text-decoration: none;
-    color: #004977;
+    color: var(--color7);
     
 }
 footer a:hover{
