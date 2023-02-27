@@ -7,8 +7,11 @@
     --color0: #91CCEC;
     --color1: #8AF7E2;
     --color2: #78CED6;
-    --color4: #fe9d4df1;
-    --color5: #789CD6;
+    --color3: #fe9d4df1;
+    --color4: #789CD6;
+    --color5: #38fa75;
+    --color6: #78D6D5;
+    --color7: #004977;
     --font1: 'Merienda', cursive;
     --font2: 'Quicksand', sans-serif;
 }
@@ -23,7 +26,7 @@ body{
     padding-top:50px;
 }
 header{
-    background: var(--color4);
+    background: var(--color3);
     color:white;
     text-align: center;
     border-radius: 10px 10px 0px 0px;
@@ -50,12 +53,13 @@ section{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.279);
     font-family: var(--font2);
     font-size: 23px;
+    height: auto;
 }
 input[type=text]{
-    padding: 17px;
+    padding: 18px;
     border-radius: 4px;
     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
-    border: 1px solid var(--color4);
+    border: 1px solid var(--color3);
     font-size: 17pt;
     font-family: var(--font2);
     padding-left: 75px;
@@ -64,11 +68,11 @@ input[type=text]{
     background-position: 1px 1px;
     background-size: 65px;
     margin-bottom: 25px;
-    height: 30px;
-    max-width: 900px;
-    min-width: 88%;
-    margin-left: 5px;
-    margin-right: 5px;
+    height: 65px;
+    max-width: 1000px;
+    min-width: 99.7%;
+    box-sizing: border-box;
+    
 }
 input[name=Nametxt]{
     background-image: url('image/people.png');
@@ -87,7 +91,6 @@ input[name=NumberPhone]{
     margin-right: 12px;
     max-width: 350px;
     min-width: 10px;
-    
 }
 #Inserts > p{
     margin-top: 10px;
@@ -99,40 +102,71 @@ select{
     max-width:100px;
     min-width: 10px;
     font-size: 40px;
-    height: 61px;
-    border-radius: 4px;
+    height: 65px;
+    border-radius: 5px;
     box-shadow:1px 1px 3px rgba(0, 0, 0, 0.184);
-    border: 1px solid var(--color5);
+    border: 2px solid var(--color7);
     margin-right: 12px;
     vertical-align: sub;
-    
-}
-input[value=AddPhone]{
-    background-color: #78D6D5;
+    padding-bottom: 1px;
     cursor: pointer;
-    border-radius: 6px;
+}
+
+input[value=Add]{
+    background-color: var(--color6);
+    cursor: pointer;
+    border-radius: 9px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.227);
-    width: 87px ;
-    height: 35px;
+    width: 85px ;
+    height: 46px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
-    font-size: 12pt;
+    font-size: 14pt;
     padding: 1px;
-    border: 1px solid var(--color5);
+    border: 2px solid var(--color7);
     text-align: center;
     vertical-align: center;
+    font-family: var(--font2);
+    transition-duration: 0.5s;
+   
 }
 ul{
     list-style-type:none;
+    background-image: linear-gradient(to right, #78d6d498, transparent);
+    text-indent: -40px;
+    max-width: 300px;
+    min-width: 150px;
+    border-radius: 4px;
+    margin: auto;
+    font-family: var(--font2);
+    -moz-box-shadow:-1px -1px 2px var(--color7);
+    -webkit-box-shadow:-1px -1px 2px var(--color7);
+    box-shadow:-1px -1px 2px var(--color7);
+}
+input[value=Finish]{
+    max-width: 1000px;
+    min-width: 99.7%;
+    padding: 5px;
+    margin: 0px;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
+    font-size: 16pt;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+    border-radius: 4px;
+    border: 2px solid var(--color5);
+    text-align: center;
+    cursor:pointer;
+    background-color: var(--color5);
+    font-family: var(--font2);
+    font-weight: bold;
 }
 footer{
-    color: black;
+    color: #004977;
     text-align: center;
     font-style: italic;
     padding: 10px;
 }
 footer a{
     text-decoration: none;
-    color: black;
+    color: #004977;
     
 }
 footer a:hover{
