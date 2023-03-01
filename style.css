@@ -141,7 +141,6 @@ li{
     font-family: var(--font2);
     padding-left: 60px;
     height: 55px;
-    columns: 2;
 }
 #Marker{
     transform: rotate(30deg);

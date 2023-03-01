@@ -46,8 +46,6 @@ function DeletePhone(Number){
 
 }
 function Finish(){
-    window.alert(`Oi`);
-    
     const URL='http://localhost:5000/Contacts';
     const Data={
         name: Name.value,

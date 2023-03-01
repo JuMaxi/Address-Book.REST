@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Contacts and Actions</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>List Contacts</h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                Contact Name: <input type="search" name="Search" id="SearchContact" placeholder="Search the contact..." minlength="4" required>
+                <input type="button" value="Search" onclick="SearchContactList()">
+                <span class="validity" ></span>
+            </p> 
+            <p>
+                <table>
+                    <tr>
+                        <th width="70%">Name Contact</th>
+                        <th>Options</th>
+                    </tr>
+                    <tr>
+                        <td>Nazare da Silva</td>
+                        <td>
+                            <input type="button" value="Details" onclick="ShowContact()">
+                            <input type="button" value="Edit" onclick="EditContact()">
+                            <input type="button" value="Delete" onclick="DeleteContact()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Binha Minhuzis</td>
+                        <td>
+                            <input type="button" value="Details" onclick="ShowContact()">
+                            <input type="button" value="Edit" onclick="EditContact()">
+                            <input type="button" value="Delete" onclick="DeleteContact()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Herr Hans Zillertaller</td>
+                        <td>
+                            <input type="button" value="Details" onclick="ShowContact()">
+                            <input type="button" value="Edit" onclick="EditContact()">
+                            <input type="button" value="Delete" onclick="DeleteContact()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Exmo. Sr. Zespri</td>
+                        <td>
+                            <input type="button" value="Details" onclick="ShowContact()">
+                            <input type="button" value="Edit" onclick="EditContact()">
+                            <input type="button" value="Delete" onclick="DeleteContact()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Falagalera Oie</td>
+                        <td>
+                            <input type="button" value="Details" onclick="ShowContact()">
+                            <input type="button" value="Edit" onclick="EditContact()">
+                            <input type="button" value="Delete" onclick="DeleteContact()">
+                        </td>
+                    </tr>
+                </table>
+            </p>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
