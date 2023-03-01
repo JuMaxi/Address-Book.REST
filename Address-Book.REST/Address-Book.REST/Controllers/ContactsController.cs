@@ -86,31 +86,31 @@ namespace Address_Book.REST.Controllers
                     Email AddEmail = new Email();
 
                     if (Id != IdComparation)
-                        {
-                            AddContactList.Name = Convert.ToString(reader["Name"]);
-                            AddContactList.Address = Convert.ToString(reader["Address"]);
+                    {
+                        AddContactList.Name = Convert.ToString(reader["Name"]);
+                        AddContactList.Address = Convert.ToString(reader["Address"]);
 
-                            AddEmail.EmailAddress = Convert.ToString(reader["Email"]);
-                            AddContactList.Email = AddEmail;
+                        AddEmail.EmailAddress = Convert.ToString(reader["Email"]);
+                        AddContactList.Email = AddEmail;
 
-                            if (CheckPhone != "")
-                            {
-                                AddPhones.Type = Convert.ToInt32(reader["Kind"]);
-                                AddPhones.Number = Convert.ToString(reader["Phone"]);
-
-                                AddContactList.Phones.Add(AddPhones);
-                            }
-
-                            ListContacts.Add(AddContactList);
-
-                        }
-                        else
+                        if (CheckPhone != "")
                         {
                             AddPhones.Type = Convert.ToInt32(reader["Kind"]);
                             AddPhones.Number = Convert.ToString(reader["Phone"]);
 
-                            ListContacts[ListContacts.Count - 1].Phones.Add(AddPhones);
+                            AddContactList.Phones.Add(AddPhones);
                         }
+
+                        ListContacts.Add(AddContactList);
+
+                    }
+                    else
+                    {
+                        AddPhones.Type = Convert.ToInt32(reader["Kind"]);
+                        AddPhones.Number = Convert.ToString(reader["Phone"]);
+
+                        ListContacts[ListContacts.Count - 1].Phones.Add(AddPhones);
+                    }
 
                     IdComparation = Id;
                 }

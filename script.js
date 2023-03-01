@@ -27,7 +27,7 @@ function InsertPhone(){
     PhonesArray.push({
         position: Position,
         type: TypePhone[type].value,
-        phone: NumberPhone.value
+        number: NumberPhone.value
     });
 
     NumberPhone.value = '';
@@ -45,13 +45,24 @@ function DeletePhone(Number){
     PhonesArray = PhonesArray.filter(ob => ob.position != Number);
 
 }
-function CheckPhones(arrayphones){
-    for(let positionarray = 0; positionarray < arrayphones.length; arrayphones++)
-    {
-        return arrayphones[positionarray];
-    }
-}
 function Finish(){
     window.alert(`Oi`);
-    let EndMessage = window.document.getElementById('End');
+    
+    const URL='http://localhost:5000/Contacts';
+    const Data={
+        name: Name.value,
+        address: Address.value,
+        email: {
+            emailaddress: Email.value
+        },
+        phones: PhonesArray
+    };
+    const otherP={
+        headers:{
+            "content-type": "application/json; charset=UTF-8"
+        },
+        body: JSON.stringify(Data),
+        method: "POST"
+    };
+    fetch(URL, otherP)
 }
