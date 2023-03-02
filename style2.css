@@ -48,12 +48,44 @@ section{
     background: white;
     border-radius: 0px 0px 10px 10px;
     padding: 12px;
-    padding-top: 18px;
+    padding-top: 12px;
     margin: auto;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.279);
     font-family: var(--font2);
     font-size: 23px;
-    height: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.115);
+}
+input[type=search]{
+    padding: 2px;
+    border-radius: 4px;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
+    font-family: var(--font2);
+    font-size: 15pt;
+    height: 35px;
+    width: 316px;
+    box-sizing: border-box;
+    margin-left: 6px;
+    font-size: 19px;
+    background-color: rgba(187, 181, 181, 0.392);
+    border: none;
+}
+.text{
+    padding:7px;
+}
+.name{
+    padding-bottom: 0px;
+    padding-left: 5px;
+    padding-top: 13px;
+}
+td, th{
+    border: 1px outset rgba(156, 244, 155, 0.500);
+    border-collapse: collapse;
+    border-radius: 4px;
+    padding: 2px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.200);
+    width: 120%;
+    min-width: 266px;
+    height: 20px;
 }
 input[type=button]{
     padding: 2px;
@@ -66,7 +98,13 @@ input[type=button]{
     width: 90px;
     box-sizing: border-box;
     cursor: pointer;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.267);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.244);
+    transition-duration: 0.4s;
+    margin-left: 11px;
+    margin-right: 0px;
+    margin-top: 1px;
+    max-width: 73px;
+    margin-bottom: 1px;
 }
 input[type=button]:hover{
     background-color: var(--color5);
