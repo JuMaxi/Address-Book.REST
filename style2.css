@@ -11,7 +11,6 @@
     --color4: #789CD6;
     --color5: #38fa75;
     --color6: #78D6D5;
-    --color7: #004977;
     --font1: 'Merienda', cursive;
     --font2: 'Quicksand', sans-serif;
 }
@@ -55,88 +54,104 @@ section{
     font-size: 23px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.115);
 }
-input[type=search]{
+input[name=Search]{
     padding: 2px;
     border-radius: 4px;
     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
     font-family: var(--font2);
-    height: 35px;
-    width: 52%;
+    height: 50px;
+    width: 80%;
     box-sizing: border-box;
     margin-left: 1px;
     font-size: 19px;
-    background-color: rgba(187, 181, 181, 0.392);
+    background-color: rgba(187, 181, 181, 0.318);
     border: none;
     padding-left:5px;
+    float: left;
+    margin-bottom: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
-input[value=Search]{
+
+button[type=submit]{
+    float: left;
+    width: 10%;
+    padding: 2px;
+    border-radius: 4px;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
+    font-family: var(--font2);
+    height: 50px;
+    border: none;
+    padding-left:5px;
     background-color: rgba(149, 144, 144, 0.534);
-    margin-right: 1px;
+    float: left;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
-input[value=Search]:hover{
+button[type=submit]:hover{
     background-color: rgba(73, 71, 71, 0.655);
     color: white;
     font-weight: bold;
 }
 #new{
-    width: 29%;
+    width: 8%;
     padding: 2px;
     border-radius: 4px;
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.301);
     border: none;
     font-family: var(--font2);
     font-size: 17pt;
-    height: 35px;
+    height: 50px;
     background-color:#38fa7594;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.244);
     margin-left: 10px;
     padding-bottom: 5px;
     padding-top: 3px;
+    transition-duration: 0.4s;
 }
 #new:hover{
     background-color: var(--color5);
     color: white;
     font-weight: bold;
 }
-.buttons{
-    padding: 2px;
-    border-radius: 4px;
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
-    border: none;
-    font-family: var(--font2);
-    font-size: 15pt;
-    height: 35px;
-    width: 90px;
-    box-sizing: border-box;
-    cursor: pointer;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.244);
-    transition-duration: 0.4s;
-    margin-left: 11px;
-    margin-right: 0px;
-    margin-top: 1px;
-    max-width: 73px;
-    margin-bottom: 1px;
-}
-input[value=Details]{
+button[name=details]{
     background-color:rgba(225, 236, 74, 0.5);
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.567);
+    width: 29%;
+    height: 40px;
+    margin: 2px;
+    margin-right: 5px;
+    margin-left: 7px;
 }
-input[value=Edit]{
+button[name=edit]{
     background-color:rgba(120, 206, 214, 0.5);
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.567);
+    width: 29%;
+    height: 40px;
+    margin: 2px;
+    margin-right: 6px;
 }
-input[value=Delete]{
+button[name=delete]{
     background-color: rgba(255, 0, 0, 0.5);
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.567);
+    width: 29%;
+    height: 40px;
+    margin: 2px;
+    margin-right: 6px;
 }
-input[value=Details]:hover{
+button[name=details]:hover{
     background-color: rgb(237, 225, 5);
     color: white;
     font-weight: bolder;
 }
-input[value=Edit]:hover{
+button[name=edit]:hover{
     background-color: rgb(120, 206, 214);
     color: white;
     font-weight: bold;
 }
-input[value=Delete]:hover{
+button[name=delete]:hover{
     background-color: rgb(230, 55, 55);
     color: white;
     font-weight: bold;
@@ -154,8 +169,10 @@ td, th{
     border-collapse: collapse;
     border-radius: 4px;
     padding: 2px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.200);
-    width: 120%;
-    min-width: 266px;
-    height: 20px;
+    width: 100%;
+    min-width: 230px;
+    height: auto;
+}
+tr:nth-child(even) {
+    background-color: rgba(141, 231, 140, 0.252);
 }

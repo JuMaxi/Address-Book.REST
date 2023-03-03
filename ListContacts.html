@@ -7,6 +7,10 @@
     <title>List Contacts and Actions</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/6ec5d9a39e.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6ec5d9a39e.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
     <header>
@@ -15,9 +19,13 @@
     <section>
         <div>
             <p>
-                <input type="search" name="Search" id="SearchContact" placeholder="Search the contact name..." minlength="4" required>
-                <input class="buttons" type="button" value="Search" onclick="SearchContactList()">
-                <input id="new" type="button" value="New Contact" onclick="AddContact()">
+                <input type="text" name="Search"  placeholder="Search the contact name..." minlength="4" required>
+                <button type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button id="new" type="submit">
+                    <i class="fa-solid fa-user-plus"></i>
+                </button>
             </p> 
             <p>
                 <table>
@@ -28,41 +36,71 @@
                     <tr>
                         <td class="name">Nazare da Silva</td>
                         <td>
-                            <input class="buttons" type="button" value="Details" onclick="ShowContact()">
-                            <input class="buttons" type="button" value="Edit" onclick="EditContact()">
-                            <input class="buttons" type="button" value="Delete" onclick="DeleteContact()">
+                            <button type="submit" name="details"> Details
+                                <i class="fa-solid fa-memo-circle-info"></i>
+                            </button>
+                            <button type="submit" name="edit"> Edit
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <button type="submit" name="delete"> Delete
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                     <tr>
                         <td class="name">Binha Minhuzis</td>
                         <td>
-                            <input class="buttons" type="button" value="Details" onclick="ShowContact()">
-                            <input class="buttons" type="button" value="Edit" onclick="EditContact()">
-                            <input class="buttons" type="button" value="Delete" onclick="DeleteContact()">
+                            <button type="submit" name="details"> Details
+                                <i class="fa-solid fa-memo-circle-info"></i>
+                            </button>
+                            <button type="submit" name="edit"> Edit
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <button type="submit" name="delete"> Delete
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                     <tr>
                         <td class="name">Herr Hans Zillertaller</td>
                         <td>
-                            <input class="buttons" type="button" value="Details" onclick="ShowContact()">
-                            <input class="buttons" type="button" value="Edit" onclick="EditContact()">
-                            <input class="buttons" type="button" value="Delete" onclick="DeleteContact()">
+                            <button type="submit" name="details"> Details
+                                <i class="fa-solid fa-memo-circle-info"></i>
+                            </button>
+                            <button type="submit" name="edit"> Edit
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <button type="submit" name="delete"> Delete
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                     <tr>
                         <td class="name">Exmo. Sr. Zespri</td>
                         <td>
-                            <input class="buttons" type="button" value="Details" onclick="ShowContact()">
-                            <input class="buttons" type="button" value="Edit" onclick="EditContact()">
-                            <input class="buttons" type="button" value="Delete" onclick="DeleteContact()">
+                            <button type="submit" name="details"> Details
+                                <i class="fa-solid fa-memo-circle-info"></i>
+                            </button>
+                            <button type="submit" name="edit"> Edit
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <button type="submit" name="delete"> Delete
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                     <tr>
                         <td class="name">Falagalera Oie</td>
                         <td>
-                            <input class="buttons" type="button" value="Details" onclick="ShowContact()">
-                            <input class="buttons" type="button" value="Edit" onclick="EditContact()">
-                            <input class="buttons" type="button" value="Delete" onclick="DeleteContact()">
+                            <button type="submit" name="details"> Details
+                                <i class="fa-solid fa-memo-circle-info"></i>
+                            </button>
+                            <button type="submit" name="edit"> Edit
+                                <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <button type="submit" name="delete"> Delete
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                 </table>
