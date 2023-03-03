@@ -59,7 +59,7 @@ input[type=text]{
     padding: 18px;
     border-radius: 4px;
     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
-    border: 1px solid var(--color3);
+    border: 1px solid rgba(83, 216, 237, 0.292);
     font-size: 17pt;
     font-family: var(--font2);
     padding-left: 75px;
@@ -104,8 +104,8 @@ select{
     font-size: 40px;
     height: 65px;
     border-radius: 5px;
-    box-shadow:1px 1px 3px rgba(0, 0, 0, 0.184);
-    border: 2px solid var(--color7);
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.184);
+    border: 2px solid rgba(83, 216, 237, 0.551);
     margin-right: 12px;
     vertical-align: sub;
     padding-bottom: 1px;
@@ -113,10 +113,11 @@ select{
 }
 
 input[value=Add]{
-    background-color: var(--color6);
+    background-color:#38fa7594;
     cursor: pointer;
     border-radius: 4px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.227);
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.184);
+    border: none;
     width: 85px ;
     height: 66px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
@@ -124,11 +125,9 @@ input[value=Add]{
     padding: 1px;
     padding-bottom: 1px;
     padding-top: 0px;
-    border: 2px solid var(--color7);
     text-align: center;
     vertical-align: center;
     font-family: var(--font2);
-    color: var(--color7);
     font-weight: bold;
     transition-duration: 0.5s;
 }
@@ -150,7 +149,7 @@ li{
     height: 6px;
     width: -1px;
 }
-input[value=Finish]{
+.finish{
     max-width: 1000px;
     min-width: 99.7%;
     padding: 5px;
@@ -162,26 +161,53 @@ input[value=Finish]{
     border: none;
     text-align: center;
     cursor:pointer;
-    background-color: var(--color3);
+    background-color:rgba(254, 157, 77, 0.74);
     font-family: var(--font2);
     font-weight: bolder;
     height: 65px;
-    color: var(--color7);
-    transition-duration: 0.5s;
+    transition: all 0.5s;
+    color:normal;
+}
+.finish span{
+    cursor:pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.finish span:after{
+    content:'\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition:0.5s;
+}
+.finish:hover span{
+    padding-right: 25px;
+}
+.finish:hover span:after{
+    opacity: 1;
+    right: 0;
+}
+.finish:hover{
+    background-color: rgb(238, 122, 27);
+
 }
 input[type=button]:hover{
     background-color: var(--color5);
     color:white;
 }
 footer{
-    color: var(--color7);
     text-align: center;
     font-style: italic;
     padding: 10px;
+    font-family: var(--font2);
+    font-size: 23px;
 }
 footer a{
     text-decoration: none;
-    color: var(--color7);
+    font-family: var(--font2);
+    color:black;
 }
 footer a:hover{
     text-decoration: underline;

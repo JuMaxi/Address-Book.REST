@@ -158,6 +158,7 @@ button[name=delete]:hover{
 }
 .text{
     padding:7px;
+    background-color: #789cd6ab;
 }
 .name{
     padding-bottom: 0px;
@@ -165,7 +166,7 @@ button[name=delete]:hover{
     padding-top: 13px;
 }
 td, th{
-    border: 1px outset rgba(156, 244, 155, 0.500);
+    border: 1px outset rgba(160, 185, 189, 0.252);
     border-collapse: collapse;
     border-radius: 4px;
     padding: 2px;
@@ -174,5 +175,21 @@ td, th{
     height: auto;
 }
 tr:nth-child(even) {
-    background-color: rgba(141, 231, 140, 0.252);
+    background-color: rgba(160, 185, 189, 0.252);
+}
+footer{
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+    font-family: var(--font2);
+    font-size: 23px;
+}
+footer a{
+    text-decoration: none;
+    color:black;
+    font-family: var(--font2);
+}
+footer a:hover{
+    text-decoration: underline;
+    color:normal;
 }
