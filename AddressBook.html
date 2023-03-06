@@ -7,35 +7,46 @@
     <title>Address Book Rest</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/6ec5d9a39e.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6ec5d9a39e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Address Book</h1>    
+        <h1> <button type="submit" title="returnlist" name="return"><i class="fa-regular fa-circle-left fa-2xl"></i></button> Address Book</h1> 
     </header>
-    <section>
-        <div id="Inserts">
-            <p>Name: </p> 
-            <p><input type="text" name="Nametxt" id="Nametxt"></p>
-            <p>Address: </p>
-            <p><input type="text" name="Address" id="Address"></p>
-            <p>Email: </p>
-            <p><input type="text" name="Email" id="Email"></p>
-            <p>Number Phone: </p>
-            <p>
-                <input type="text" name="NumberPhone" id="NumberPhone">
-                    <select>
-                       <option value="1" selected>📱</option>
-                       <option value="2">📞</option>
-                       <option value="3">☎️</option>
-                    </select>
-                <input type="button" value="Add" onclick="InsertPhone()">
-            </p>
+    <section class="container">
+        <div>
+            <div class="field">
+                <p class="type">Name: </p>
+                <p class="button"><input type="text" name="Nametxt" id="Nametxt">
+                </p>
+            </div>
+            <div class="field">
+                <p class="type">Address: </p>
+                <p class="button"><input type="text" name="Address" id="Address"></p>
+            </div>
+            <div class="field">
+                <p class="type">Email: </p>
+                <p class="button"><input type="text" name="Email" id="Email"></p>
+            </div>
+            <div class="field">
+                <p class="type">Number Phone: </p>
+                <p class="button">
+                    <input type="text" name="NumberPhone" id="NumberPhone">
+                        <select>
+                           <option title="Mobile Phone" value="1" selected>📱</option>
+                            <option title="Business Phone" value="2">📞</option>
+                            <option title="Home Phone" value="3">☎️</option>
+                        </select>
+                        <input title="New Phone" type="button" value="Add" onclick="InsertPhone()">
+                </p>
+            </div>
         </div>
         <div>
                  <ul id="ShowPhones"></ul>
         </div>
-        <div>
-            <button class="finish" onclick="Finish()"><span>Finish</span></button>
+        <div class="field">
+            <button title="" class="finish" onclick="Finish()"><span>Finish</span><button>
         </div>
     </section>
     <footer>
