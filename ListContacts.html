@@ -19,13 +19,15 @@
     <section>
         <div>
             <p>
-                <input id="search" type="text" name="Search"  placeholder="Search the contact name..." minlength="3" required>
+                <input id="search" type="text" name="Search"  autocomplete="off" placeholder="Search the contact name..." minlength="3" required>
                 <button type="submit" onclick="getAllContacts()">
                     <i class="fa-solid fa-magnifying-glass fa-xl"></i></i>
                 </button>
-                <button title="New Contact" id="new" type="submit">
-                    <i class="fa-solid fa-user-plus fa-lg"></i>
-                </button>
+                <a href="AddressBook.html" target="_blank">
+                    <button title="New Contact" id="new" type="submit">
+                        <i class="fa-solid fa-user-plus fa-lg"></i>
+                    </button>
+                </a>
             </p> 
             <p>
                 <table>
