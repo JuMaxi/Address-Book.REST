@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Data.SqlClient;
 using Microsoft.OpenApi.Extensions;
+using System.ComponentModel.Design;
 
 namespace Address_Book.REST.Controllers
 {
@@ -60,13 +61,21 @@ namespace Address_Book.REST.Controllers
         }
 
         [HttpGet]
-        public List<Contacts> ShowContacts()
+        public List<Contacts> ShowContacts([FromQuery] string filter)
         {
             List<Contacts> ListContacts = new List<Contacts>();
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                string select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId";
+                string select = "";
+                if(filter == null)
+                {
+                    select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId";
+                }
+                else
+                {
+                    select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId where Contact.Name LIKE '%" + filter +"%'";
+                }
 
                 SqlCommand command = new SqlCommand(select, connection);
 

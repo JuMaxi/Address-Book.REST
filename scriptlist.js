@@ -12,7 +12,14 @@ function newcontact(name){
 }
 
 function getAllContacts(){
-    const URL='http://localhost:5000/Contacts';
+
+    let search = window.document.getElementById('search');
+
+    let URL='http://localhost:5000/Contacts'
+
+   if(search.value.length > 0){
+       URL = URL + "?filter=" + search.value;
+   }
     const opts={
         headers:{
             "Accept": "application/json; charset=UTF-8"
