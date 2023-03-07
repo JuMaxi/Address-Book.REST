@@ -145,5 +145,30 @@ namespace Address_Book.REST.Controllers
             }
         }
 
+        [HttpPut]
+        public void UpdateContacts(Contacts UpdateContact)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string Update = "update Contact set Name='" + UpdateContact.Name +"', Address='" + UpdateContact.Address + "', Email='" + UpdateContact.Email.EmailAddress + "'where Id=" + UpdateContact.Id;
+
+                SqlCommand command = new SqlCommand(Update, connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+
+                string Delete = "delete from Phones where ContactId="+UpdateContact.Id;
+                command = new SqlCommand(Delete, connection);
+                command.ExecuteNonQuery();
+
+                for(int Position = 0; Position < UpdateContact.Phones.Count; Position++)
+                {
+                    string Insert = "insert into Phones (ContactId, Kind, Phone) values(" + UpdateContact.Id + ",'" + UpdateContact.Phones[Position].Type + "','" + UpdateContact.Phones[Position].Number + "')";
+                    command = new SqlCommand(Insert, connection);
+                    command.ExecuteNonQuery();
+                }
+
+            }
+        }
+
     }
 }
