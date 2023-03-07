@@ -49,20 +49,6 @@ header > h1{
     padding: 2px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.281);
 }
-i{
-    color: var(--fa-primary-color);
-}
-i:hover{
-    color:var(--fa-secondary-color);
-}
-h1 > button{
-    display: inline-block;
-    cursor:pointer;
-    border: none;
-    font-size: 0.5em;
-    background-color: var(--color3);
-   
-}
 section{
     max-width: 1000px;
     min-width: 300px;

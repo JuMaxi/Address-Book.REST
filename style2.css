@@ -72,7 +72,6 @@ input[name=Search]{
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
-
 button[type=submit]{
     float: left;
     width: 10%;

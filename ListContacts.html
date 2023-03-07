@@ -20,7 +20,7 @@
         <div>
             <p>
                 <input type="text" name="Search"  placeholder="Search the contact name..." minlength="4" required>
-                <button type="submit">
+                <button type="submit" onclick="getAllContacts()">
                     <i class="fa-solid fa-magnifying-glass fa-xl"></i></i>
                 </button>
                 <button title="New Contact" id="new" type="submit">
@@ -29,80 +29,14 @@
             </p> 
             <p>
                 <table>
+                  <tbody id="newline">  
                     <tr>
                         <th class="text">Name Contact</th>
                         <th class="text">Options</th>
                     </tr>
                     <tr>
-                        <td class="name">Nazare da Silva</td>
-                        <td>
-                            <button type="submit" name="details"> Details
-                                <i class="fa-solid fa-file-lines fa-lg"></i>
-                            </button>
-                            <button type="submit" name="edit"> Edit
-                                <i class="fa-solid fa-pencil fa-lg"></i>
-                            </button>
-                            <button type="submit" name="delete"> Delete
-                                <i class="fa-solid fa-trash fa-lg"></i>
-                            </button>
-                        </td>
                     </tr>
-                    <tr>
-                        <td class="name">Binha Minhuzis</td>
-                        <td>
-                            <button type="submit" name="details"> Details
-                                <i class="fa-solid fa-file-lines fa-lg"></i>
-                            </button>
-                            <button type="submit" name="edit"> Edit
-                                <i class="fa-solid fa-pencil fa-lg"></i>
-                            </button>
-                            <button type="submit" name="delete"> Delete
-                                <i class="fa-solid fa-trash fa-lg"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="name">Herr Hans Zillertaller</td>
-                        <td>
-                            <button type="submit" name="details"> Details
-                                <i class="fa-solid fa-file-lines fa-lg"></i>
-                            </button>
-                            <button type="submit" name="edit"> Edit
-                                <i class="fa-solid fa-pencil fa-lg"></i>
-                            </button>
-                            <button type="submit" name="delete"> Delete
-                                <i class="fa-solid fa-trash fa-lg"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="name">Exmo. Sr. Zespri</td>
-                        <td>
-                            <button type="submit" name="details"> Details
-                                <i class="fa-solid fa-file-lines fa-lg"></i>
-                            </button>
-                            <button type="submit" name="edit"> Edit
-                                <i class="fa-solid fa-pencil fa-lg"></i>
-                            </button>
-                            <button type="submit" name="delete"> Delete
-                                <i class="fa-solid fa-trash fa-lg"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="name">Falagalera Oie</td>
-                        <td>
-                            <button type="submit" name="details"> Details
-                                <i class="fa-solid fa-file-lines fa-lg"></i>
-                            </button>
-                            <button type="submit" name="edit"> Edit
-                                <i class="fa-solid fa-pencil fa-lg"></i>
-                            </button>
-                            <button type="submit" name="delete"> Delete
-                                <i class="fa-solid fa-trash fa-lg"></i>
-                            </button>
-                        </td>
-                    </tr>
+                  </tbody>
                 </table>
             </p>
         </div>
@@ -110,6 +44,6 @@
     <footer>
         <p>Developed by <a href="https://github.com/JuMaxi" target="_blank" class="externo">Juliana Maximovski</a></p>
     </footer>
-    <script src="script.js"></script>
+    <script src="scriptlist.js"></script>
 </body>
 </html>
