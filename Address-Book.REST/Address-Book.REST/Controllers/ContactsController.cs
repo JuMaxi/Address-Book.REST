@@ -96,6 +96,7 @@ namespace Address_Book.REST.Controllers
 
                     if (Id != IdComparation)
                     {
+                        AddContactList.Id = Id;
                         AddContactList.Name = Convert.ToString(reader["Name"]);
                         AddContactList.Address = Convert.ToString(reader["Address"]);
 
@@ -111,7 +112,6 @@ namespace Address_Book.REST.Controllers
                         }
 
                         ListContacts.Add(AddContactList);
-
                     }
                     else
                     {
@@ -125,6 +125,24 @@ namespace Address_Book.REST.Controllers
                 }
             }
             return ListContacts;
+        }
+
+        [HttpDelete]
+        public void RemoveContacts(int NumberID)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string DeletePhones = "delete from Phones where ContactId=" + NumberID;
+                SqlCommand command = new SqlCommand(DeletePhones, connection);
+                connection.Open();
+
+                command.ExecuteNonQuery();
+
+                string DeleteContact = "delete from Contact where Id=" + NumberID;
+                command = new SqlCommand(DeleteContact, connection);
+
+                command.ExecuteNonQuery();
+            }
         }
 
     }

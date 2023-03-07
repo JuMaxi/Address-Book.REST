@@ -10,6 +10,7 @@ namespace Address_Book.REST.Models
         public string Address { get; set; }
         public Email Email { get; set; }
         public List<Phones> Phones { get; set; }
+        public int Id { get; set; }
 
 
         public void ValidateContacts()
