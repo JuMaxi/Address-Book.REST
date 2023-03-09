@@ -91,7 +91,7 @@ namespace Address_Book.REST.Controllers
 
                         string CheckPhone = Convert.ToString(reader["Phone"]);
 
-                        if (CheckPhone != null)
+                        if (CheckPhone != "")
                         {
                             Phones.Type = Convert.ToInt32(reader["Kind"]);
                             Phones.Number = CheckPhone;

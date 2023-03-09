@@ -53,19 +53,18 @@ function DeletePhone(Number){
 
 }
 function Finish(){
-    
-    let endpoint = '';
-    if(ID == null){
-        endpoint = 'POST';
-        ID = 0;
+
+    let endpoint = 'POST';
+    let ident = 0;
+
+    if(ID != null){
+        endpoint = 'PUT';
+        ident = ID;
     }
-    else{
-        endpoint = 'PUT'
-    }
-  
+
     const URL='http://localhost:5000/Contacts';
     const Data={
-        id: ID,
+        id: ident,
         name: Name.value,
         address: Address.value,
         email: {
