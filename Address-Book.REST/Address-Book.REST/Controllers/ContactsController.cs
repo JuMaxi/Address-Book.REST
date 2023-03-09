@@ -60,6 +60,57 @@ namespace Address_Book.REST.Controllers
             }
         }
 
+        [HttpGet("{ID}")]
+        public Contacts GetContact([FromRoute] int ID)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId where Contact.Id=" + ID;
+
+                SqlCommand command = new SqlCommand(select, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+
+                int IdLast = 0;
+                Contacts CheckContact = new Contacts();
+                Email CheckEmail = new Email();
+                CheckContact.Phones = new List<Phones>();
+
+                while (reader.Read())
+                {
+                    Phones Phones = new Phones();
+
+                    if (IdLast != ID)
+                    {
+                        CheckContact.Id = Convert.ToInt32(reader["Id"]);
+                        CheckContact.Name = Convert.ToString(reader["Name"]);
+                        CheckContact.Address = Convert.ToString(reader["Address"]);
+                        CheckEmail.EmailAddress = Convert.ToString(reader["Email"]);
+                        CheckContact.Email = CheckEmail;
+
+                        string CheckPhone = Convert.ToString(reader["Phone"]);
+
+                        if (CheckPhone != null)
+                        {
+                            Phones.Type = Convert.ToInt32(reader["Kind"]);
+                            Phones.Number = CheckPhone;
+                            CheckContact.Phones.Add(Phones);
+                        }
+                    }
+                    else
+                    {
+                        Phones.Type = Convert.ToInt32(reader["Kind"]);
+                        Phones.Number = Convert.ToString(reader["Phone"]);
+
+                        CheckContact.Phones.Add(Phones);
+                    }
+                    IdLast = ID;
+                }
+                return CheckContact;
+            }
+        }
+
         [HttpGet]
         public List<Contacts> ShowContacts([FromQuery] string filter)
         {
@@ -68,13 +119,13 @@ namespace Address_Book.REST.Controllers
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 string select = "";
-                if(filter == null)
+                if (filter == null)
                 {
                     select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId";
                 }
                 else
                 {
-                    select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId where Contact.Name LIKE '%" + filter +"%'";
+                    select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId where Contact.Name LIKE '%" + filter + "%'";
                 }
 
                 SqlCommand command = new SqlCommand(select, connection);
@@ -150,25 +201,23 @@ namespace Address_Book.REST.Controllers
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                string Update = "update Contact set Name='" + UpdateContact.Name +"', Address='" + UpdateContact.Address + "', Email='" + UpdateContact.Email.EmailAddress + "'where Id=" + UpdateContact.Id;
+                string Update = "update Contact set Name='" + UpdateContact.Name + "', Address='" + UpdateContact.Address + "', Email='" + UpdateContact.Email.EmailAddress + "'where Id=" + UpdateContact.Id;
 
                 SqlCommand command = new SqlCommand(Update, connection);
                 connection.Open();
                 command.ExecuteNonQuery();
 
-                string Delete = "delete from Phones where ContactId="+UpdateContact.Id;
+                string Delete = "delete from Phones where ContactId=" + UpdateContact.Id;
                 command = new SqlCommand(Delete, connection);
                 command.ExecuteNonQuery();
 
-                for(int Position = 0; Position < UpdateContact.Phones.Count; Position++)
+                for (int Position = 0; Position < UpdateContact.Phones.Count; Position++)
                 {
                     string Insert = "insert into Phones (ContactId, Kind, Phone) values(" + UpdateContact.Id + ",'" + UpdateContact.Phones[Position].Type + "','" + UpdateContact.Phones[Position].Number + "')";
                     command = new SqlCommand(Insert, connection);
                     command.ExecuteNonQuery();
                 }
-
             }
         }
-
     }
 }

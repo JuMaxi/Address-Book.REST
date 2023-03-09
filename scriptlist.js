@@ -5,7 +5,7 @@ function newcontact(name, id){
     <td class="name">${name}</td> 
     <td>
     <button type="submit" name="details"> Details <i class="fa-solid fa-file-lines fa-lg"></i></button>
-    <button type="submit" name="edit"> Edit <i class="fa-solid fa-pencil fa-lg"></i></button>
+    <a href="AddressBook.html?ID=${id}"><button type="submit" name="edit"> Edit <i class="fa-solid fa-pencil fa-lg"></i></button></a>
     <button type="submit" name="delete" onclick="deletecontact(${id})"> Delete <i class="fa-solid fa-trash fa-lg"></i></button>
     </td>
     </tr>`;

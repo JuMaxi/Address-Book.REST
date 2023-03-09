@@ -16,11 +16,18 @@ function TypeCheck(){
     }
 }
 let Position = 0;
-function InsertPhone(){
-    let NumberPhone = window.document.getElementById('NumberPhone');
+let TypePhone = window.document.getElementsByTagName('option');
+let NumberPhone = window.document.getElementById('NumberPhone');
+function InsertPhone(id){
     let ShowPhones = window.document.getElementById('ShowPhones');
-    let TypePhone = window.document.getElementsByTagName('option');
-    let type = TypeCheck();
+    
+    let type = '';
+    if(id == null){
+        type = TypeCheck();
+    }
+    else{
+        type = Number(TypePhone.value) - 1;
+    }
 
     ShowPhones.innerHTML +=`<li id="${Position}"> <div id="Marker">${TypePhone[type].innerHTML}</div> ${NumberPhone.value} <span onclick="DeletePhone(${Position})" style="cursor:pointer">❌</span></li>`;
 
@@ -46,8 +53,19 @@ function DeletePhone(Number){
 
 }
 function Finish(){
+    
+    let endpoint = '';
+    if(ID == null){
+        endpoint = 'POST';
+        ID = 0;
+    }
+    else{
+        endpoint = 'PUT'
+    }
+  
     const URL='http://localhost:5000/Contacts';
     const Data={
+        id: ID,
         name: Name.value,
         address: Address.value,
         email: {
@@ -60,7 +78,49 @@ function Finish(){
             "content-type": "application/json; charset=UTF-8"
         },
         body: JSON.stringify(Data),
-        method: "POST"
+       
+        method: endpoint
     };
     fetch(URL, otherP)
 }
+
+let urlParams = new URLSearchParams(window.location.search);
+let ID = urlParams.get('ID');
+
+if(ID != null){
+    let URL='http://localhost:5000/Contacts/'+ID;
+
+    const opts={
+        headers:{
+            "Accept": "application/json; charset=UTF-8"
+        },
+        method: "Get"
+    };
+    fetch(URL, opts)
+    .then((response) => response.json())
+    .then((data) => writedata(data));
+}
+function writedata(response){
+    Name.value = response.name;
+    Address.value = response.address;
+    Email.value = response.email.emailAddress;
+
+    for(let Position = 0; Position < response.phones.length; Position++){
+            
+        NumberPhone.value = response.phones[Position].number;
+        TypePhone.value = response.phones[Position].type;
+
+        InsertPhone(response.id);
+    }
+    return response.id;
+}
+
+
+
+
+
+   
+    
+
+
+
