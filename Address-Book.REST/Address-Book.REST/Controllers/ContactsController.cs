@@ -12,11 +12,9 @@ namespace Address_Book.REST.Controllers
     [Route("[controller]")] // Atributes
     public class ContactsController : ControllerBase
     {
-        string ConnectionString = "Server=LAPTOP-P4GEIO8K\\SQLEXPRESS;Database=AddressBook;User Id=sa;Password=S4root;";
         Access_DB AccessDB = new Access_DB();
 
         [HttpPost]
-
         public void ReceiveContact(Contacts NewContact)
         {
             AddNewContactDB(NewContact);
@@ -48,48 +46,17 @@ namespace Address_Book.REST.Controllers
         }
 
         [HttpGet("{ID}")]
-        public Contacts GetContact([FromRoute] int ID)
+        public Contacts CheckId([FromRoute] int ID)
         {
+            List<Contacts> ListContacts = new List<Contacts>();
+
             string select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId where Contact.Id=" + ID;
 
             SqlDataReader reader = AccessDB.AccessReader(select);
 
-            int IdLast = 0;
-            Contacts CheckContact = new Contacts();
-            Email CheckEmail = new Email();
-            CheckContact.Phones = new List<Phones>();
+            ListContacts = AccessDB.GetContacts(reader);
 
-            while (reader.Read())
-            {
-                Phones Phones = new Phones();
-
-                if (IdLast != ID)
-                {
-                    CheckContact.Id = Convert.ToInt32(reader["Id"]);
-                    CheckContact.Name = Convert.ToString(reader["Name"]);
-                    CheckContact.Address = Convert.ToString(reader["Address"]);
-                    CheckEmail.EmailAddress = Convert.ToString(reader["Email"]);
-                    CheckContact.Email = CheckEmail;
-
-                    string CheckPhone = Convert.ToString(reader["Phone"]);
-
-                    if (CheckPhone != "")
-                    {
-                        Phones.Type = Convert.ToInt32(reader["Kind"]);
-                        Phones.Number = CheckPhone;
-                        CheckContact.Phones.Add(Phones);
-                    }
-                }
-                else
-                {
-                    Phones.Type = Convert.ToInt32(reader["Kind"]);
-                    Phones.Number = Convert.ToString(reader["Phone"]);
-
-                    CheckContact.Phones.Add(Phones);
-                }
-                IdLast = ID;
-            }
-            return CheckContact;
+            return ListContacts[0];
         }
 
         [HttpGet]
@@ -97,58 +64,17 @@ namespace Address_Book.REST.Controllers
         {
             List<Contacts> ListContacts = new List<Contacts>();
 
-            string select = "";
-            if (filter == null)
+            string select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId";
+
+            if (filter != null)
             {
-                select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId";
-            }
-            else
-            {
-                select = "select Contact.Id, Contact.Name, Contact.Address, Contact.Email, Phones.Kind, Phones.Phone from Contact left join Phones on Contact.Id = Phones.ContactId where Contact.Name LIKE '%" + filter + "%'";
+                select = select + " where Contact.Name LIKE '%" + filter + "%'";
             }
 
             SqlDataReader reader = AccessDB.AccessReader(select);
 
-            int IdComparation = 0;
+            ListContacts = AccessDB.GetContacts(reader);
 
-            while (reader.Read())
-            {
-                int Id = Convert.ToInt32(reader["Id"]);
-                string CheckPhone = Convert.ToString(reader["Phone"]);
-                Phones AddPhones = new Phones();
-                Contacts AddContactList = new Contacts();
-                AddContactList.Phones = new List<Phones>();
-                Email AddEmail = new Email();
-
-                if (Id != IdComparation)
-                {
-                    AddContactList.Id = Id;
-                    AddContactList.Name = Convert.ToString(reader["Name"]);
-                    AddContactList.Address = Convert.ToString(reader["Address"]);
-
-                    AddEmail.EmailAddress = Convert.ToString(reader["Email"]);
-                    AddContactList.Email = AddEmail;
-
-                    if (CheckPhone != "")
-                    {
-                        AddPhones.Type = Convert.ToInt32(reader["Kind"]);
-                        AddPhones.Number = Convert.ToString(reader["Phone"]);
-
-                        AddContactList.Phones.Add(AddPhones);
-                    }
-
-                    ListContacts.Add(AddContactList);
-                }
-                else
-                {
-                    AddPhones.Type = Convert.ToInt32(reader["Kind"]);
-                    AddPhones.Number = Convert.ToString(reader["Phone"]);
-
-                    ListContacts[ListContacts.Count - 1].Phones.Add(AddPhones);
-                }
-
-                IdComparation = Id;
-            }
             return ListContacts;
         }
 
@@ -162,7 +88,6 @@ namespace Address_Book.REST.Controllers
             string DeleteContact = "delete from Contact where Id=" + NumberID;
 
             AccessDB.AccessNonQuery(DeleteContact);
-
         }
 
         [HttpPut]
