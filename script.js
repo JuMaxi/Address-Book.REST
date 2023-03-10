@@ -34,7 +34,7 @@ function InsertPhone(id){
 
     if(Details != null){
         span = '';
-     }
+    }
 
     ShowPhones.innerHTML +=`<li id="${Position}"> <div id="Marker">${TypePhone[type].innerHTML}</div> ${NumberPhone.value} ${span}</li>`;
 
@@ -120,7 +120,7 @@ if(Details != null){
     window.document.getElementById('add').style.display = 'none';
     window.document.getElementById('finish').style.display = 'none';
 
-    
+    window.document.getElementById('phones').innerHTML = 'Phones:';
 }
 
 function writedata(response){
