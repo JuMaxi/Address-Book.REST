@@ -15,9 +15,11 @@ function TypeCheck(){
         }
     }
 }
+
 let Position = 0;
 let TypePhone = window.document.getElementsByTagName('option');
 let NumberPhone = window.document.getElementById('NumberPhone');
+
 function InsertPhone(id){
     let ShowPhones = window.document.getElementById('ShowPhones');
     
@@ -88,6 +90,20 @@ function Finish(){
         method: endpoint
     };
     fetch(URL, otherP)
+
+    changebutton();
+}
+function changebutton(){
+    let button = window.document.getElementById('finish').innerHTML = 'Back';
+    if(button == 'Back'){
+        window.document.getElementById('finish').className = 'back';
+        window.document.getElementById('finish').innerHTML = '<i class="fa-regular fa-circle-left"></i>' + button;
+    }
+    
+    window.document.getElementById('finish').onclick = returnpag;
+}
+function returnpag(){
+    window.location = 'ListContacts.html';
 }
 
 let urlParams = new URLSearchParams(window.location.search);
@@ -118,7 +134,8 @@ if(Details != null){
         select[position].style.display = 'none';
     }
     window.document.getElementById('add').style.display = 'none';
-    window.document.getElementById('finish').style.display = 'none';
+    
+    changebutton();
 
     window.document.getElementById('phones').innerHTML = 'Phones:';
 }

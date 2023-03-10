@@ -168,7 +168,7 @@ li{
     height: 6px;
     width: -1px;
 }
-.finish{
+.finish, .back{
     width: 100%;
     padding: 5px;
     margin: 0px;
@@ -188,13 +188,13 @@ li{
     float: right;
     margin-bottom: 0px;
 }
-.finish span{
+.finish span, .back span{
     cursor:pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-.finish span:after{
+.finish span:after, .back span:after{
     content:'\00bb';
     position: absolute;
     opacity: 0;
@@ -202,10 +202,10 @@ li{
     right: -20px;
     transition:0.5s;
 }
-.finish:hover span{
+.finish:hover span, .back:hover span{
     padding-right: 25px;
 }
-.finish:hover span:after{
+.finish:hover span:after, .back:hover span:after{
     opacity: 1;
     right: 0;
 }
@@ -213,7 +213,13 @@ li{
     background-color: var(--color4);
     box-shadow:3px 3px 6px rgba(0, 0, 0, 0.280);
 }
-
+.back{
+    background-color:#fe9d4da4;
+}
+.back:hover{
+    background-color: var(--color3);
+    box-shadow:3px 3px 6px rgba(0, 0, 0, 0.280);
+}
 footer{
     text-align: center;
     font-style: italic;
