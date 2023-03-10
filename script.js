@@ -29,7 +29,14 @@ function InsertPhone(id){
         type = Number(TypePhone.value) - 1;
     }
 
-    ShowPhones.innerHTML +=`<li id="${Position}"> <div id="Marker">${TypePhone[type].innerHTML}</div> ${NumberPhone.value} <span onclick="DeletePhone(${Position})" style="cursor:pointer">❌</span></li>`;
+
+    let span = '<span onclick="DeletePhone(${Position})" style="cursor:pointer">❌</span>';
+
+    if(Details != null){
+        span = '';
+     }
+
+    ShowPhones.innerHTML +=`<li id="${Position}"> <div id="Marker">${TypePhone[type].innerHTML}</div> ${NumberPhone.value} ${span}</li>`;
 
     PhonesArray.push({
         position: Position,
@@ -85,6 +92,7 @@ function Finish(){
 
 let urlParams = new URLSearchParams(window.location.search);
 let ID = urlParams.get('ID');
+let Details = urlParams.get('Details');
 
 if(ID != null){
     let URL='http://localhost:5000/Contacts/'+ID;
@@ -99,6 +107,22 @@ if(ID != null){
     .then((response) => response.json())
     .then((data) => writedata(data));
 }
+if(Details != null){
+    window.document.getElementById('Nametxt').disabled = true;
+    window.document.getElementById('Address').disabled = true;
+    window.document.getElementById('Email').disabled = true;
+    window.document.getElementById('NumberPhone').style.display = 'none';
+
+    let select = window.document.getElementsByTagName('select');
+    for(let position = 0; position < select.length; position++){
+        select[position].style.display = 'none';
+    }
+    window.document.getElementById('add').style.display = 'none';
+    window.document.getElementById('finish').style.display = 'none';
+
+    
+}
+
 function writedata(response){
     Name.value = response.name;
     Address.value = response.address;
@@ -111,7 +135,6 @@ function writedata(response){
 
         InsertPhone(response.id);
     }
-    return response.id;
 }
 
 
