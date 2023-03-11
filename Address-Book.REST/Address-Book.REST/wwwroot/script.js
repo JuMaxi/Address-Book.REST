@@ -103,7 +103,7 @@ function changebutton(){
     window.document.getElementById('finish').onclick = returnpag;
 }
 function returnpag(){
-    window.location = 'ListContacts.html';
+    window.location = 'default.html';
 }
 
 let urlParams = new URLSearchParams(window.location.search);

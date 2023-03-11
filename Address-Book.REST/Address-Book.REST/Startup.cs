@@ -48,6 +48,9 @@ namespace Address_Book.REST
              .AllowAnyMethod()
              .AllowAnyHeader());
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
