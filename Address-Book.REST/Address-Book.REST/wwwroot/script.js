@@ -20,11 +20,11 @@ let Position = 0;
 let TypePhone = window.document.getElementsByTagName('option');
 let NumberPhone = window.document.getElementById('NumberPhone');
 
-function InsertPhone(id){
+function InsertPhone(ID){
     let ShowPhones = window.document.getElementById('ShowPhones');
     
     let type = '';
-    if(id == null){
+    if(ID == null){
         type = TypeCheck();
     }
     else{
@@ -32,7 +32,7 @@ function InsertPhone(id){
     }
 
 
-    let span = '<span onclick="DeletePhone(${Position})" style="cursor:pointer">❌</span>';
+    let span = '<span onclick="DeletePhone(' + Position + ')" style="cursor:pointer">❌</span>';
 
     if(Details != null){
         span = '';

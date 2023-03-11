@@ -12,41 +12,56 @@
 </head>
 <body>
     <header>
-        <h1>Address Book</h1> 
+        <h1>Address Book</h1>
     </header>
-    <section class="container">
-        <div>
-            <div class="field">
-                <p class="type">Name: </p>
-                <p class="button"><input autocomplete="off" type="text" name="Nametxt" id="Nametxt">
-                </p>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Name:</label>
+                </div>
+                <div class="col-75">
+                    <input autocomplete="off" type="text" name="Nametxt" id="Nametxt">
+                </div>
             </div>
-            <div class="field">
-                <p class="type">Address: </p>
-                <p class="button"><input autocomplete="off" type="text" name="Address" id="Address"></p>
+            <div class="row">
+                <div class="col-25">
+                    <label for="address">Address:</label>
+                </div>
+                <div class="col-75">
+                    <input autocomplete="off" type="text" name="Address" id="Address">
+                </div>
             </div>
-            <div class="field">
-                <p class="type">Email: </p>
-                <p class="button"><input autocomplete="off" type="text" name="Email" id="Email"></p>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-75">
+                    <input autocomplete="off" type="text" name="Email" id="Email">
+                </div>
             </div>
-            <div class="field">
-                <p id="phones"class="type">Number Phone: </p>
-                <p class="button">
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="phone">Number Phone:</label>
+                </div>
+                <div class="col-75">
                     <input autocomplete="off" type="text" name="NumberPhone" id="NumberPhone">
-                        <select>
-                           <option title="Mobile Phone" value="1" selected>📱</option>
-                            <option title="Business Phone" value="2">📞</option>
-                            <option title="Home Phone" value="3">☎️</option>
-                        </select>
-                        <input id="add" title="New Phone" type="button" value="Add" onclick="InsertPhone()">
-                </p>
+                    <select>
+                        <option title="Mobile Phone" value="1" selected>📱</option>
+                        <option title="Business Phone" value="2">📞</option>
+                        <option title="Home Phone" value="3">☎️</option>
+                    </select>
+                    <input id="add" title="New Phone" type="button" value="Add" onclick="InsertPhone()">
+                </div>
             </div>
-        </div>
-        <div>
-                 <ul id="ShowPhones"></ul>
-        </div>
-        <div class="field">
-            <button id="finish" title="" class="finish" onclick="Finish()"><span>Finish</span></button>
+
+            <div>
+                <ul id="ShowPhones"></ul>
+            </div>
+            <div class="row">
+                <button id="finish" title="" class="finish" onclick="Finish()"><span>Finish</span></button>
+            </div>
         </div>
     </section>
     <footer>
