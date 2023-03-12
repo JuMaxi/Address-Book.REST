@@ -71,7 +71,7 @@ function Finish(){
         ident = ID;
     }
 
-    const URL='http://localhost:5000/Contacts';
+    const URL='/Contacts';
     const Data={
         id: ident,
         name: Name.value,
@@ -111,7 +111,7 @@ let ID = urlParams.get('ID');
 let Details = urlParams.get('Details');
 
 if(ID != null){
-    let URL='http://localhost:5000/Contacts/'+ID;
+    let URL='/Contacts/'+ID;
 
     const opts={
         headers:{

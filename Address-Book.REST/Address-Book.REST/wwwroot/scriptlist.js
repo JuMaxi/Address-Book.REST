@@ -15,7 +15,7 @@ function getAllContacts(){
 
     let search = window.document.getElementById('search');
 
-    let URL='http://localhost:5000/Contacts'
+    let URL='/Contacts'
 
    if(search.value.length > 0){
        URL = URL + "?filter=" + search.value;
@@ -47,7 +47,7 @@ function addContactsToTable(contactArray){
     }
 }
 function deletecontact(Id){
-    let URL='http://localhost:5000/Contacts?NumberID='+Id;
+    let URL='/Contacts?NumberID='+Id;
 
     const opts={
         headers:{
