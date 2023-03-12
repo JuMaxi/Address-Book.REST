@@ -251,9 +251,31 @@ footer {
         }
 
 @media screen and (max-width:600px) {
+    body {
+        padding-top: 25px;
+        
+    }
+    header{
+        padding: 20px;
+    }
+    header > h1{
+        margin:5px;
+    }
+    section {
+        padding-top: 0px;
+        padding-bottom: 11px;
+        font-size: 16pt;
+    }
+    .container {
+        padding: 3px 10px 10px;
+    }
     .col-25, .col-75, .finish, .back {
         width: 100%;
         margin-top: 0px;
+        font-size: 16pt;
+    }
+    input[type=text]{
+        font-size:14pt;
     }
     select{
         width:15%;
@@ -278,5 +300,12 @@ footer {
         padding-top:18px;
         padding-bottom:13px;
         text-align:center;
+    }
+    footer {
+        padding: 2px;
+    }
+    footer > p{
+        margin: 10px;
+        font-size:20px;
     }
 }
