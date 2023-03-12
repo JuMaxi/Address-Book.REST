@@ -4,9 +4,9 @@ function newcontact(name, id){
     newline.innerHTML += `<tr>
     <td class="name">${name}</td> 
     <td>
-    <a href="AddressBook.html?ID=${id}&Details=true"><button type="submit" name="details"> Details <i class="fa-solid fa-file-lines fa-lg"></i></button></a>
-    <a href="AddressBook.html?ID=${id}"><button type="submit" name="edit"> Edit <i class="fa-solid fa-pencil fa-lg"></i></button></a>
-    <button type="submit" name="delete" onclick="deletecontact(${id})"> Delete <i class="fa-solid fa-trash fa-lg"></i></button>
+    <a href="AddressBook.html?ID=${id}&Details=true"><button type="submit" name="details"><span> Details </span><i class="fa-solid fa-file-lines fa-lg"></i></button></a>
+    <a href="AddressBook.html?ID=${id}"><button type="submit" name="edit"><span> Edit </span><i class="fa-solid fa-pencil fa-lg"></i></button></a>
+    <button type="submit" name="delete" onclick="deletecontact(${id})"><span> Delete </span><i class="fa-solid fa-trash fa-lg"></i></button>
     </td>
     </tr>`;
 }

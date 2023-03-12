@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-:root{
+:root {
     --color0: #91CCEC;
     --color1: #8AF7E2;
     --color2: #78CED6;
@@ -14,22 +14,24 @@
     --font1: 'Merienda', cursive;
     --font2: 'Quicksand', sans-serif;
 }
+
 * {
     box-sizing: border-box;
 }
 
-body{
+body {
     background-image: linear-gradient(to bottom, var(--color0), var(--color2), var(--color1));
     background-color: var(--color0);
     font: normal 15pt Arial;
     margin: 10px;
     width: auto;
     min-height: 1200px;
-    padding-top:50px;
+    padding-top: 50px;
 }
-header{
+
+header {
     background: var(--color3);
-    color:white;
+    color: white;
     text-align: center;
     border-radius: 10px 10px 0px 0px;
     padding: 12px;
@@ -40,11 +42,13 @@ header{
     margin: auto;
     padding-bottom: 1px;
 }
-header > h1{
-    padding: 2px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.281);
-}
-section{
+
+    header > h1 {
+        padding: 2px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.281);
+    }
+
+section {
     max-width: 1000px;
     min-width: 300px;
     background: white;
@@ -57,10 +61,11 @@ section{
     font-size: 23px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.115);
 }
-input[name=Search]{
+
+input[name=Search] {
     padding: 2px;
     border-radius: 4px;
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.244);
     font-family: var(--font2);
     height: 50px;
     width: 80%;
@@ -69,22 +74,23 @@ input[name=Search]{
     font-size: 19px;
     background-color: rgba(187, 181, 181, 0.318);
     border: none;
-    padding-left:5px;
+    padding-left: 5px;
     float: left;
     margin-bottom: 20px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
-button[type=submit]{
+
+button[type=submit] {
     float: left;
     width: 10%;
     padding: 2px;
     border-radius: 4px;
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.244);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.244);
     font-family: var(--font2);
     height: 50px;
     border: none;
-    padding-left:5px;
+    padding-left: 5px;
     background-color: rgba(149, 144, 144, 0.534);
     float: left;
     cursor: pointer;
@@ -92,81 +98,93 @@ button[type=submit]{
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
 }
-button[type=submit]:hover{
-    background-color: rgba(73, 71, 71, 0.655);
-    color: white;
-    font-weight: bold;
-}
-#new{
+
+    button[type=submit]:hover {
+        background-color: rgba(73, 71, 71, 0.655);
+        color: white;
+        font-weight: bold;
+    }
+
+#new {
     width: 8%;
     padding: 2px;
     border-radius: 4px;
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.301);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.301);
     border: none;
     font-family: var(--font2);
     font-size: 90%;
     height: 50px;
-    background-color:#38fa7594;
+    background-color: #38fa7594;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.244);
     margin-left: 10px;
     padding-bottom: 5px;
     padding-top: 3px;
     transition-duration: 0.4s;
 }
-#new:hover{
-    background-color: var(--color5);
-    color: white;
-    font-weight: bold;
-}
-button[name=details]{
-    background-color:rgba(225, 236, 74, 0.5);
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.567);
+
+    #new:hover {
+        background-color: var(--color5);
+        color: white;
+        font-weight: bold;
+    }
+
+button[name=details] {
+    background-color: rgba(225, 236, 74, 0.5);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.567);
     width: 29%;
     height: 40px;
     margin: 2px;
     margin-right: 5px;
     margin-left: 7px;
 }
-button[name=edit]{
-    background-color:rgba(120, 206, 214, 0.5);
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.567);
+
+button[name=edit] {
+    background-color: rgba(120, 206, 214, 0.5);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.567);
     width: 29%;
     height: 40px;
     margin: 2px;
     margin-right: 6px;
 }
-button[name=delete]{
+
+button[name=delete] {
     background-color: rgba(255, 0, 0, 0.5);
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.567);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.567);
     width: 29%;
     height: 40px;
     margin: 2px;
     margin-right: 6px;
 }
-button[name=details]:hover{
+
+button[name=details]:hover {
     background-color: rgb(237, 225, 5);
     color: white;
     font-weight: bolder;
 }
-button[name=edit]:hover{
+
+button[name=edit]:hover {
     background-color: rgb(120, 206, 214);
     color: white;
     font-weight: bold;
 }
-button[name=delete]:hover{
+
+button[name=delete]:hover {
     background-color: rgb(230, 55, 55);
     color: white;
     font-weight: bold;
 }
-.text{
-    padding:7px;
+
+.text {
+    padding: 6px;
     background-color: #789cd6ab;
 }
-.name{
+
+.name {
     padding-bottom: 0px;
     padding-left: 5px;
     padding-top: 13px;
 }
+
 td, th {
     border: 1px outset rgba(160, 185, 189, 0.252);
     border-collapse: collapse;
@@ -176,28 +194,34 @@ td, th {
     min-width: 230px;
     height: auto;
 }
+
 tr:nth-child(even) {
     background-color: rgba(160, 185, 189, 0.252);
 }
-footer{
+
+footer {
     text-align: center;
     font-style: italic;
     padding: 10px;
     font-family: var(--font2);
     font-size: 23px;
 }
-footer a{
-    text-decoration: none;
-    color:black;
-    font-family: var(--font2);
-}
-footer a:hover{
-    text-decoration: underline;
-}
+
+    footer a {
+        text-decoration: none;
+        color: black;
+        font-family: var(--font2);
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
 #table-container {
     width: 100%;
     overflow-x: auto;
 }
+
 @media screen and (max-width:630px) {
     input[name=Search] {
         width: 77%;
@@ -218,6 +242,38 @@ footer a:hover{
     }
 
     td, th {
-        font-size:17px;
+        font-size: 17px;
+        width: 100%;
+        min-width: 128px;
     }
+    
+
+        td > a > [type=submit] {
+            width: 25%;
+            min-width: 20px;
+            height: 35px;
+           
+        }
+
+        td > [type=submit] {
+            width: 25%;
+            min-width: 20px;
+            height: 35px;
+        }
+
+        td > a > button {
+            font-size: 0.65em;
+        }
+
+        td > button {
+            font-size: 0.65em;
+        }
+
+            td > button > span {
+                display: none;
+            }
+
+        td > a > button > span {
+            display: none;
+        }
 }
