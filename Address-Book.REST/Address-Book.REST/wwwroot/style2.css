@@ -246,13 +246,11 @@ footer {
         width: 100%;
         min-width: 128px;
     }
-    
 
         td > a > [type=submit] {
             width: 25%;
             min-width: 20px;
             height: 35px;
-           
         }
 
         td > [type=submit] {
