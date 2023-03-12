@@ -104,7 +104,7 @@ button[type=submit]:hover{
     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.301);
     border: none;
     font-family: var(--font2);
-    font-size: 17pt;
+    font-size: 90%;
     height: 50px;
     background-color:#38fa7594;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.244);
@@ -193,9 +193,31 @@ footer a{
 }
 footer a:hover{
     text-decoration: underline;
-    
 }
 #table-container {
     width: 100%;
     overflow-x: auto;
+}
+@media screen and (max-width:630px) {
+    input[name=Search] {
+        width: 77%;
+        min-width: auto;
+        font-size: 17px;
+    }
+
+    button[name=glass] {
+        width: 10%;
+        min-width: auto;
+        font-size: 10px;
+    }
+
+    #new {
+        width: 9%;
+        min-width: 33px;
+        font-size: 14px;
+    }
+
+    td, th {
+        font-size:17px;
+    }
 }
