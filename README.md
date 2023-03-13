@@ -1,6 +1,6 @@
-# My First Full Stack Project!
+# My First Full-Stack Project!
 
-My purpose with this project was to develop a **Full Stack** application to manage contacts.
+My purpose with this project was to develop a **Full-Stack** application to manage contacts.
 
 I applied my learnings obtained over the last months in **C#, SQL, HTTP API, JSON** and my **HTML, CSS, JavaScript** learnings from [*Curso em Video*](https://www.youtube.com/@CursoemVideo). 
 
